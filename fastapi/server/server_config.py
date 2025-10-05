@@ -8,6 +8,10 @@ SERVER_SECRET_KEY=os.getenv("APP_SECRET_KEY")
 JWT_SECRET_KEY=os.getenv("JWT_SECRET_KEY")
 
 
+#API Base Path
+api_base_path=os.getenv("API_BASE_PATH")
+server_path =os.path.dirname(os.path.abspath(__file__))
+
 # getting data from env
 db_name=os.getenv("DB_NAME")
 db_user=os.getenv("DB_USER")
