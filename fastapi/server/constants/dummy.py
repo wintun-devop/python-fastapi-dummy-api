@@ -1,5 +1,5 @@
 from typing import Dict
-from schema.dummy_schema import Dummy
+from schemas.dummy_schema import Dummy
 
 _Dummies: Dict[str, Dummy] = {
     "1": Dummy(id="1", name="Sample A", description="A sample item"),

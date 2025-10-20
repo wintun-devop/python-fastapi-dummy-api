@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, status
 from constants.dummy import _Dummies
-from schema.dummy_schema import Dummy,DummyUpdate
+from schemas.dummy_schema import Dummy,DummyUpdate
 
 dummy_router =APIRouter(tags=["dummy"])
 
