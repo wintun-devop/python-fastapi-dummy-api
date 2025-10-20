@@ -11,6 +11,10 @@ fastapi_env\Scripts\activate
 ```
 pip install "fastapi[standard]"
 ```
+### installing database packages
+```
+pip install sqlalchemy[asyncio] asyncpg
+```
 
 ### running app
 ```
