@@ -1,6 +1,6 @@
 
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
-from server.server_config import db_name,db_user,db_password,db_host_write,db_host_read
+from server_config import db_name,db_user,db_password,db_host_write,db_host_read
 
 db_write_link = f"postgresql+asyncpg://{db_user}:{db_password}@{db_host_write}/{db_name}"
 db_read_link = f"postgresql+asyncpg://{db_user}:{db_password}@{db_host_read}/{db_name}"
