@@ -18,6 +18,3 @@ db_user=os.getenv("DB_USER")
 db_password=os.getenv("DB_PASSWORD")
 db_host_write=os.getenv("DB_HOST_WRITE")
 db_host_read=os.getenv("DB_HOST_READ")
-
-# DATABASE_LINK=f"postgresql://db_user:db_password@db_host/db_name"
-DATABASE_LINK=f"postgresql://{db_user}:{db_password}@{db_host}/{db_name}"
