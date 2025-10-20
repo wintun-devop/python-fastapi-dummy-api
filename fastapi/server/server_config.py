@@ -16,7 +16,8 @@ server_path =os.path.dirname(os.path.abspath(__file__))
 db_name=os.getenv("DB_NAME")
 db_user=os.getenv("DB_USER")
 db_password=os.getenv("DB_PASSWORD")
-db_host=os.getenv("DB_HOST")
+db_host_write=os.getenv("DB_HOST_WRITE")
+db_host_read=os.getenv("DB_HOST_READ")
 
 # DATABASE_LINK=f"postgresql://db_user:db_password@db_host/db_name"
 DATABASE_LINK=f"postgresql://{db_user}:{db_password}@{db_host}/{db_name}"
