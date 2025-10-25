@@ -14,6 +14,7 @@ from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import relationship
 from sqlalchemy.orm import mapped_column
+from datetime import timezone
 import datetime
 
 class Base(AsyncAttrs,DeclarativeBase):
@@ -27,8 +28,8 @@ class User(Base):
     email:Mapped[str] = mapped_column(String,nullable=False,unique=True)
     password:Mapped[str] = mapped_column(String,nullable=False)
     role:Mapped[str] = mapped_column(String,nullable=True,default="user")
-    createdAt: Mapped[datetime.datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow)
-    updatedAt: Mapped[datetime.datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow, onupdate=datetime.utcnow)
+    createdAt: Mapped[datetime.datetime] = mapped_column(DateTime(timezone=True), default=datetime.datetime.now(timezone.utc))
+    updatedAt: Mapped[datetime.datetime] = mapped_column(DateTime(timezone=True), default=datetime.datetime.now(timezone.utc), onupdate=datetime.datetime.now(timezone.utc))
 
 
 class Inventory(Base):
@@ -38,5 +39,5 @@ class Inventory(Base):
     model_no:Mapped[str] = mapped_column(String,nullable=False, unique=True)
     price:Mapped[float] = mapped_column(Float,nullable=True,default=0)
     qty:Mapped[int] = mapped_column(Integer,nullable=True,default=0)
-    createdAt: Mapped[datetime.datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow)
-    updatedAt: Mapped[datetime.datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow, onupdate=datetime.utcnow)
+    createdAt: Mapped[datetime.datetime] = mapped_column(DateTime(timezone=True), default=datetime.datetime.now(timezone.utc))
+    updatedAt: Mapped[datetime.datetime] = mapped_column(DateTime(timezone=True), default=datetime.datetime.now(timezone.utc), onupdate=datetime.datetime.now(timezone.utc))
