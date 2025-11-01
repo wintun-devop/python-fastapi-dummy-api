@@ -23,6 +23,8 @@ class AuthCustomResponse(BaseModel):
     username: str
     email: EmailStr
     role: str
+    access_token: str
+    refresh_token: str
     createdAt: datetime
     updatedAt: datetime | None
     

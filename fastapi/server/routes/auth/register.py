@@ -19,7 +19,7 @@ user_register_router =APIRouter(tags=["auth"])
     status_code=status.HTTP_201_CREATED, 
     summary="Register User"
 )
-async def create_item(payload: UserRegister,session:AsyncSession = Depends(get_write_session)):
+async def register_user(payload: UserRegister,session:AsyncSession = Depends(get_write_session)):
         new_user = User(
         id=str(uuid.uuid4()),
         # or payload.username if you add it to the schema
