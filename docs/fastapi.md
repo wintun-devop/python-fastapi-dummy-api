@@ -16,7 +16,18 @@ pip install "fastapi[standard]"
 pip install sqlalchemy[asyncio] asyncpg
 ```
 
+
+### Auth Modules
+```
+pip install python-jose[cryptography] passlib[argon2] python-multipart
+```
+
 ### running app
 ```
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Openssl Command for generate secret key
+```
+openssl rand -base64 32
 ```

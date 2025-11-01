@@ -3,9 +3,7 @@ from dotenv import load_dotenv
 #to get to ensure from .env
 load_dotenv(override=True)
 
-# server secret(app secret) key and jwt secret key
-SERVER_SECRET_KEY=os.getenv("APP_SECRET_KEY")
-JWT_SECRET_KEY=os.getenv("JWT_SECRET_KEY")
+
 
 
 #API Base Path
@@ -18,3 +16,13 @@ db_user=os.getenv("DB_USER")
 db_password=os.getenv("DB_PASSWORD")
 db_host_write=os.getenv("DB_HOST_WRITE")
 db_host_read=os.getenv("DB_HOST_READ")
+
+
+access_token_expire_minutes = 60  # 30 minutes
+refresh_token_expire_minutes = 60 * 24 * 7 # 7 days
+token_hash_algorithm = "HS256"
+# should be kept secret
+JWT_SECRET_KEY=os.getenv("JWT_SECRET_KEY")
+JWT_REFRESH_SECRET_KEY = os.environ['JWT_REFRESH_SECRET_KEY']
+# server secret(app secret) key and jwt secret key
+SERVER_SECRET_KEY=os.getenv("APP_SECRET_KEY")
