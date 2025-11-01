@@ -1,9 +1,8 @@
-from fastapi import APIRouter, HTTPException, status
-from server_config import server_path
+from fastapi import APIRouter
 
 # router = APIRouter(prefix="/test", tags=["test"])
 router = APIRouter(tags=["default"])
 
 @router.get("/", summary="Service root")
 async def root():
-    return {"message": "fastapi is up", "server_path": server_path}
+    return {"message": "fastapi is up"}
