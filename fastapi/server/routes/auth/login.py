@@ -25,14 +25,14 @@ async def login(payload: UserRegister,session:AsyncSession = Depends(get_read_se
     user = check_email.scalar_one_or_none()
     if user is None:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
+            status_code=status.HTTP_401_UNAUTHORIZED,
             detail="user or password is incorrect."
         )
     hash_pass=user.password
     is_password_true = verify_password(payload.password,hash_pass)
     if is_password_true is False:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
+            status_code=status.HTTP_401_UNAUTHORIZED,
             detail="user or password is incorrect."
         )
     access_token = create_refresh_token({"id":user.id,"role":user.role})
